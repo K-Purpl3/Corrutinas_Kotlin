@@ -20,5 +20,5 @@ suspend fun downloadFile(fileName: String) {
         delay(500)
         println("Descargando $fileName: ${i * 20}%")
     }
-    println("$fileName descarga completado.")
+    println("$fileName descarga completado")
 }
