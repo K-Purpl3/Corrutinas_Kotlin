@@ -11,9 +11,11 @@ fun main() = runBlocking {
             delay(1500)
         }
     }
-    
+
+    //tiempo de actividad
     delay(5000)
-    
+
+    //cancelacion
     println("Usuario inactivo, parando notificaciones")
     notificationJob.cancelAndJoin()
     println("Sistema de notificaciones parado")

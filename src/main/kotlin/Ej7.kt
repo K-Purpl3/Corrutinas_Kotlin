@@ -4,7 +4,8 @@ import kotlinx.coroutines.*
 
 fun main() = runBlocking {
     println("Ej 7 gestor de tareas con cancelacion")
-    
+
+    //lanzamiento de tarea prolongada
     val longRunningTask = launch {
         try {
             repeat(100) { i ->
@@ -12,6 +13,7 @@ fun main() = runBlocking {
                 delay(500)
             }
         } finally {
+            //limpieza despues de canclar
             withContext(NonCancellable) {
                 println("Liberando recursos")
                 delay(1000)
@@ -19,7 +21,8 @@ fun main() = runBlocking {
             }
         }
     }
-    
+
+    //tiempo antes de cancelar
     delay(2500)
     println("Cancelando tarea larga")
     longRunningTask.cancelAndJoin()

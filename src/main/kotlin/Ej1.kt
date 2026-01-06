@@ -4,7 +4,7 @@ import kotlinx.coroutines.*
 
 fun main() = runBlocking {
     println("Ej1 Tareas secuenciales")
-    
+    //llama de manera secuencial a los metodos suspend fun
     println("Login")
     login()
     
@@ -23,11 +23,13 @@ suspend fun login() {
 }
 
 suspend fun loadProfile() {
+    //carga datos
     delay(1000)
     println("Perfil cargado")
 }
 
 suspend fun loadPreferences() {
+    //lectura de preferencias
     delay(1000)
     println("Preferencias cargadas")
 }

@@ -13,9 +13,10 @@ fun main() = runBlocking {
             seconds++
         }
     }
-    
+    //tiempo de ejecucion del temporizador
     delay(5500)
-    
+
+    //cancelacion del temporizador
     println("Cancelar temporizador")
     timerJob.cancelAndJoin()
     println("Temporizador stop")
