@@ -3,9 +3,8 @@ package com.hogwarts
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
-// 4️⃣ Pronóstico del clima concurrente
 fun main() = runBlocking {
-    println("--- Inicio de pronóstico del clima concurrente ---")
+    println("Ej 4 App de clima concurrente")
     
     val time = measureTimeMillis {
         val temperature = async { getTemperature() }
@@ -17,12 +16,12 @@ fun main() = runBlocking {
         println("Viento: ${wind.await()}")
     }
     
-    println("Tiempo total de ejecución: $time ms")
+    println("Tiempo total de ejecucion: $time ms")
 }
 
 suspend fun getTemperature(): String {
     delay(1000)
-    return "25°C"
+    return "25 C"
 }
 
 suspend fun getHumidity(): String {
